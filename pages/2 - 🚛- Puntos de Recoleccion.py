@@ -35,7 +35,7 @@ m = folium.Map(location=[statistics.mean(latitudes),statistics.mean(longitudes)]
 marker_cluster = MarkerCluster().add_to(m)
 
 @st.cache_resource
-def create_marks(marker_cluster):
+def create_marks():
     for i in range(0,len(locacion)):
         texto = f"""Locacion: {nombres[i]}
                     Horario Inicio: {horario_inicio[i]}
@@ -47,7 +47,7 @@ def create_marks(marker_cluster):
             tooltip=nombres[i],
         ).add_to(marker_cluster)
 
-create_marks(marker_cluster)
+create_marks()
 
 st.title("Puntos de recoleción 🚛")
 
