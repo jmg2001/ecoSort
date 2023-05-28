@@ -43,7 +43,7 @@ if count == 0:
     m, marker_cluster = create_map()
     count = 1
 
-@st.cache_data
+@st.cache_resource
 def create_marks():
     for i in range(0,len(locacion)):
         texto = f"""Locacion: {nombres[i]}
