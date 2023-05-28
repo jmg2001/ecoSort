@@ -16,6 +16,12 @@ def make_ini(list):
         with open(r'pages/config.ini', 'w') as configfile:
                 config.write(configfile)
 
+def save_number_to_ini(name, number):
+    config['counters'] = {f'{name}': str(number)}
+
+    with open('config.ini', 'w') as config_file:
+        config.write(config_file)
+
 class_names = ['Cartón', 'Vidrio', 'Metal', 'Papel', 'Plastico', 'Basura']
 
 make_ini(class_names)
@@ -73,6 +79,7 @@ if img_file_buffer is not None:
 
     config.read('config.ini')
     material = int(config.get('counters', f'{class_names[maxIndex]}')) + 1
+    save_number_to_ini(class_names[maxIndex], material)
     st.title(f"Has ayudado a prevenir el desecho de {material} de {class_names[maxIndex]}")
 
     if maxIndex == 0:
