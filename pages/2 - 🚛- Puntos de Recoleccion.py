@@ -35,7 +35,7 @@ for dato in locacion:
 m = folium.Map(location=[statistics.mean(latitudes),statistics.mean(longitudes)], zoom_start=16)
 marker_cluster = MarkerCluster().add_to(m)
 
-@st.cache_data
+#@st.cache_data
 def create_marks():
     for i in range(0,len(locacion)):
         texto = f"""Locacion: {nombres[i]}
