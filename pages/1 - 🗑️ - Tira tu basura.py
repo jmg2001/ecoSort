@@ -28,6 +28,15 @@ if count == 0:
 
 st.title("Tira tu basura aquí:",)
 
+st.markdown(
+    """
+    Abre la camara y toma una foto a tu basura, nuestro algoritmo de clasificación
+    de imagenes utilizando ``Tensorflow`` nos permite poder decidir que tipo de basura
+    tienes.
+
+    """
+)
+
 img_file_buffer = st.camera_input("Take a picture",label_visibility="hidden")
 
 if img_file_buffer is not None:
