@@ -15,10 +15,8 @@ st.set_page_config(
 def get_data(path):
     data = pd.read_csv(path)
     return data
-count = 0
-if count == 0:
-    data = get_data("puntosRecoleccion.csv")
-    count = 1
+
+data = get_data("puntosRecoleccion.csv")
 
 nombres = data.iloc[:,5]
 locacion = data.iloc[:,10]
@@ -38,10 +36,8 @@ def create_map():
     m = folium.Map(location=[statistics.mean(latitudes),statistics.mean(longitudes)], zoom_start=16)
     marker_cluster = MarkerCluster().add_to(m)
     return m, marker_cluster
-count = 0
-if count == 0:
-    m, marker_cluster = create_map()
-    count = 1
+
+m, marker_cluster = create_map()
 
 @st.cache_resource
 def create_marks():
@@ -55,10 +51,8 @@ def create_marks():
             popup=texto,
             tooltip=nombres[i],
         ).add_to(marker_cluster)
-count = 0
-if count == 0:
-    create_marks()
-    count = 1
+
+create_marks()
 
 st.title("Puntos de recoleción 🚛")
 
