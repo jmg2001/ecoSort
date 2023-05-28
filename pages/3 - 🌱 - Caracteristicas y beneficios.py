@@ -10,7 +10,7 @@ st.set_page_config(
     page_icon="🌱",
     initial_sidebar_state="collapsed",
 )
-st.title("Características:")
+st.title("Características 🪄:")
 st.markdown("""
 - **Precisión y confiabilidad**: El proyecto utiliza algoritmos de inteligencia artificial y técnicas avanzadas de procesamiento de imágenes para lograr una clasificación precisa de los diferentes tipos de residuos. Esto garantiza resultados confiables y evita errores comunes en la clasificación manual.
 
@@ -21,7 +21,7 @@ st.markdown("""
 - **Facilidad de uso**: El proyecto se desarrolla con una interfaz de usuario intuitiva y fácil de usar. Los usuarios pueden capturar imágenes de los residuos a través de dispositivos móviles o cargar imágenes desde sus computadoras, lo que simplifica el proceso de clasificación.
 """)
 
-st.title("Beneficios:")
+st.title("Beneficios 🌱:")
 st.markdown("""
 - **Promoción de la conciencia ambiental**: Al facilitar la clasificación adecuada de los residuos, el proyecto contribuye a aumentar la conciencia ambiental y promover prácticas de reciclaje adecuadas. Esto ayuda a reducir la contaminación y el impacto negativo en el medio ambiente.
 
