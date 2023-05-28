@@ -59,7 +59,14 @@ st.markdown("""
 st_data = st_folium(m,width=725)
 
 st.markdown("""
-        Aquí podrás identifar el punto de recollecion de residuos más cercano a tu domicilio
+        Esta herramienta te permite visualizar de manera precisa los **diferentes puntos de recolección**
+        de basura dentro del área metropolitana, conforme te acercas a una zona en especial se puede observar
+        con mayor detalle la ubicación de los puntos.
+
+        Si se desea conocer **información más específica** como el horario y días de recolección,se puede hacer
+        click sobre cualquier punto y dicha información se desplegará.
             """)
+
+
 
 st.experimental_rerun()
