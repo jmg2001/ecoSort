@@ -5,9 +5,19 @@ import tensorflow as tf
 from tensorflow import keras
 import tensorflow_hub as hub
 from streamlit_extras.let_it_rain import rain
+import configparser
 
+config = configparser.ConfigParser()
+
+def make_ini(list):
+    for item in list:
+        config.set('counters',  item, 0)
+        with open('config.ini', 'w') as configfile:
+                config.write(configfile)
 
 class_names = ['Cartón', 'Vidrio', 'Metal', 'Papel', 'Plastico', 'Basura']
+
+make_ini(class_names)
 
 st.set_page_config(
     page_title="Tira tu basura",
@@ -26,6 +36,15 @@ if count == 0:
 
 
 st.title("Tira tu basura aquí:",)
+
+st.markdown(
+    """
+    Abre la camara y toma una foto a tu basura, nuestro algoritmo de clasificación
+    de imagenes utilizando ``Tensorflow`` nos permite poder decidir que tipo de basura
+    tienes.
+
+    """
+)
 
 img_file_buffer = st.camera_input("Take a picture",label_visibility="hidden")
 
@@ -50,6 +69,10 @@ if img_file_buffer is not None:
           )
     
     st.title(f"Tu residuo fue clasificado como: {class_names[maxIndex]}")
+
+    config.read('config.ini')
+    material = int(config.get('professors_colors', f'{class_names[maxIndex]}')) + 1
+    st.title(f"Has ayudado a prevenir el desecho de {material} de {class_names[maxIndex]}")
 
     if maxIndex == 0:
         emoji = "📦"
