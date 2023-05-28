@@ -23,7 +23,7 @@ if count == 0:
 nombres = data.iloc[:,5]
 locacion = data.iloc[:,10]
 horario_fin = data.iloc[:,9]
-horario_inicio = = data.iloc[:,8]
+horario_inicio = data.iloc[:,8]
 dias = data.iloc[:,7]
 locacionL = list()
 latitudes = list()
