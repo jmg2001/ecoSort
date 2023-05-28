@@ -50,7 +50,7 @@ if img_file_buffer is not None:
     prediccion = modelo.predict(imagenFinal)
     prediccion = tf.squeeze(prediccion)
 
-    if max(prediccion) > 0.9:
+    if max(prediccion) > 0.83:
 
         maxIndex = tf.argmax(prediccion).numpy()
 
