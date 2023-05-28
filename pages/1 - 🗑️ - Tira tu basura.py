@@ -7,7 +7,8 @@ import tensorflow_hub as hub
 from streamlit_extras.let_it_rain import rain
 
 
-class_names = ['Cartón', 'Vidrio', 'Metal', 'Papel', 'Plastico', 'Basura']
+#class_names = ['Cartón', 'Vidrio', 'Metal', 'Papel', 'Plastico', 'Basura'] #For model 85
+class_names = ['Bateria', 'Biodegradable', 'Vidrio Cafe', 'Carton', 'Ropa', 'Vidrio Verde', 'Aluminio','Papel','Plastico','Zapatos','Basura','Vidrio Blanco']  #For model 93
 
 st.set_page_config(
     page_title="Tira tu basura",
@@ -51,18 +52,40 @@ if img_file_buffer is not None:
     
     st.title(f"Tu residuo fue clasificado como: {class_names[maxIndex]}")
 
+    # if maxIndex == 0:
+    #     emoji = "📦"
+    # if maxIndex == 1:
+    #     emoji = "🍾"
+    # if maxIndex == 2:
+    #     emoji = "⚙️"
+    # if maxIndex == 3:
+    #     emoji = "📄"
+    # if maxIndex == 4:
+    #     emoji = "🔫"
+    # if maxIndex == 5:
+    #     emoji = "🗑️"
+
     if maxIndex == 0:
-        emoji = "📦"
+        emoji = "🔋"
     if maxIndex == 1:
+        emoji = "♻️"
+    if maxIndex == 2 or maxIndex == 5 or maxIndex == 11:
         emoji = "🍾"
-    if maxIndex == 2:
-        emoji = "⚙️"
     if maxIndex == 3:
-        emoji = "📄"
+        emoji = "📦"
     if maxIndex == 4:
+        emoji = "👕"
+    if maxIndex == 6:
+        emoji = "🥫"
+    if maxIndex == 7:
+        emoji = "📄"
+    if maxIndex == 8:
         emoji = "🔫"
-    if maxIndex == 5:
+    if maxIndex == 9:
+        emoji = "👞"
+    if maxIndex == 10:
         emoji = "🗑️"
+
 
     rain(
         emoji=emoji,
