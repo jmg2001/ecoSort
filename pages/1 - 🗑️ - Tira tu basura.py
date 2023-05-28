@@ -10,9 +10,10 @@ import configparser
 config = configparser.ConfigParser()
 
 def make_ini(list):
+    config.add_section("counters")
     for item in list:
         config.set('counters',  item, 0)
-        with open('config.ini', 'w') as configfile:
+        with open(r'pages/config.ini', 'w') as configfile:
                 config.write(configfile)
 
 class_names = ['Cartón', 'Vidrio', 'Metal', 'Papel', 'Plastico', 'Basura']
@@ -71,7 +72,7 @@ if img_file_buffer is not None:
     st.title(f"Tu residuo fue clasificado como: {class_names[maxIndex]}")
 
     config.read('config.ini')
-    material = int(config.get('professors_colors', f'{class_names[maxIndex]}')) + 1
+    material = int(config.get('counters', f'{class_names[maxIndex]}')) + 1
     st.title(f"Has ayudado a prevenir el desecho de {material} de {class_names[maxIndex]}")
 
     if maxIndex == 0:
