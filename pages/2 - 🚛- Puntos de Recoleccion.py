@@ -32,10 +32,10 @@ for dato in locacion:
     longitudes.append(float(dato.split(",")[1]))
     locacionL.append([float(dato.split(",")[0]),float(dato.split(",")[1])])
 
-m = folium.Map(location=[statistics.mean(latitudes),statistics.mean(longitudes)], zoom_start=16)
+m = folium.Map(location=[statistics.mean(latitudes),statistics.mean(longitudes)], zoom_start=10)
 marker_cluster = MarkerCluster().add_to(m)
 
-@st.cache_resource
+#@st.cache_resource
 def create_marks():
     for i in range(0,len(locacion)):
         texto = f"""Locacion: {nombres[i]}
