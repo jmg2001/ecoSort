@@ -50,7 +50,7 @@ if img_file_buffer is not None:
             mime="image/png"
           )
     
-    st.title(f"Tu residuo fue clasificado como: green:[{class_names[maxIndex]}]")
+    st.text(f"Tu residuo fue clasificado como: green:[{class_names[maxIndex]}]")
 
     # if maxIndex == 0:
     #     emoji = "📦"
