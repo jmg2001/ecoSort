@@ -60,4 +60,8 @@ st.markdown("""
         Aquí podrás identifar el punto de recollecion de residuos más cercano a tu domicilio
             """)
 
-st_data = st_folium(m,width=725)
+@st.cache_resource
+def draw_map():
+    st_data = st_folium(m,width=725)
+
+draw_map()
