@@ -17,7 +17,7 @@ def get_data(path):
     return data
 count = 0
 if count == 0:
-    data = get_data("pages\puntosRecoleccion.csv")
+    data = get_data("puntosRecoleccion.csv")
     count = 1
 
 nombres = data.iloc[:,5]
