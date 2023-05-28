@@ -22,6 +22,9 @@ if count == 0:
 
 nombres = data.iloc[:,5]
 locacion = data.iloc[:,10]
+horario_fin = data.iloc[:,9]
+horario_inicio = = data.iloc[:,8]
+dias = data.iloc[:,7]
 locacionL = list()
 latitudes = list()
 longitudes = list()
@@ -41,9 +44,13 @@ if count == 0:
     count = 1
 
 for i in range(0,len(locacion)):
+    texto = f"""Locacion: {nombres[i]}
+                Horario Inicio: {horario_inicio[i]}
+                Horario Fin: {horario_fin[i]}
+                Dias: {dias[i]}"""
     folium.Marker(
         locacionL[i],
-        popup=nombres[i],
+        popup=texto,
         tooltip=nombres[i],
     ).add_to(marker_cluster)
 
