@@ -43,16 +43,16 @@ if count == 0:
     m, marker_cluster = create_map()
     count = 1
 
-for i in range(0,len(locacion)):
-    texto = f"""Locacion: {nombres[i]}
-                Horario Inicio: {horario_inicio[i]}
-                Horario Fin: {horario_fin[i]}
-                Dias: {dias[i]}"""
-    folium.Marker(
-        locacionL[i],
-        popup=texto,
-        tooltip=nombres[i],
-    ).add_to(marker_cluster)
+# for i in range(0,len(locacion)):
+#     texto = f"""Locacion: {nombres[i]}
+#                 Horario Inicio: {horario_inicio[i]}
+#                 Horario Fin: {horario_fin[i]}
+#                 Dias: {dias[i]}"""
+#     folium.Marker(
+#         locacionL[i],
+#         popup=texto,
+#         tooltip=nombres[i],
+#     ).add_to(marker_cluster)
 
 st.title("Puntos de recoleción 🚛")
 
