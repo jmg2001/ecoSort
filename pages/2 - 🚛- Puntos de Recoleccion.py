@@ -11,7 +11,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-@st.cache_resource
+@st.cache_data
 def get_data(path):
     data = pd.read_csv(path)
     return data
@@ -31,7 +31,7 @@ for dato in locacion:
     longitudes.append(float(dato.split(",")[1]))
     locacionL.append([float(dato.split(",")[0]),float(dato.split(",")[1])])
 
-@st.cache_resource
+@st.cache_data
 def create_map():
     m = folium.Map(location=[statistics.mean(latitudes),statistics.mean(longitudes)], zoom_start=16)
     marker_cluster = MarkerCluster().add_to(m)
@@ -39,7 +39,7 @@ def create_map():
 
 m, marker_cluster = create_map()
 
-@st.cache_resource
+@st.cache_data
 def create_marks(marker_cluster):
     for i in range(0,len(locacion)):
         texto = f"""Locacion: {nombres[i]}
