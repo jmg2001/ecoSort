@@ -40,7 +40,7 @@ def create_map():
 m, marker_cluster = create_map()
 
 @st.cache_resource
-def create_marks():
+def create_marks(marker_cluster):
     for i in range(0,len(locacion)):
         texto = f"""Locacion: {nombres[i]}
                     Horario Inicio: {horario_inicio[i]}
@@ -52,7 +52,7 @@ def create_marks():
             tooltip=nombres[i],
         ).add_to(marker_cluster)
 
-create_marks()
+create_marks(marker_cluster)
 
 st.title("Puntos de recoleción 🚛")
 
