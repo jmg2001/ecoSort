@@ -115,3 +115,5 @@ if img_file_buffer is not None:
             falling_speed=1,
             animation_length=1,
         )
+    else:
+        st.title(f"Lo siento:( no pudimos clasificar tu :green[residuo]")
