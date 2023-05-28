@@ -62,4 +62,4 @@ st.markdown("""
         Aquí podrás identifar el punto de recollecion de residuos más cercano a tu domicilio
             """)
 
-st.experimental_rerun()
+st.stop()
