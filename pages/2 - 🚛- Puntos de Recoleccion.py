@@ -31,13 +31,8 @@ for dato in locacion:
     longitudes.append(float(dato.split(",")[1]))
     locacionL.append([float(dato.split(",")[0]),float(dato.split(",")[1])])
 
-@st.cache_data
-def create_map():
-    m = folium.Map(location=[statistics.mean(latitudes),statistics.mean(longitudes)], zoom_start=16)
-    marker_cluster = MarkerCluster().add_to(m)
-    return m, marker_cluster
-
-m, marker_cluster = create_map()
+m = folium.Map(location=[statistics.mean(latitudes),statistics.mean(longitudes)], zoom_start=16)
+marker_cluster = MarkerCluster().add_to(m)
 
 @st.cache_resource
 def create_marks(marker_cluster):
