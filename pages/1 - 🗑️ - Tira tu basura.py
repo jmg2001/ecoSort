@@ -21,7 +21,7 @@ def create_model(path):
     return model
 count = 0
 if count == 0:
-    modelo = create_model("modelo_85.h5")
+    modelo = create_model("modelo_91.h5")
     count = 1
 
 
@@ -49,7 +49,7 @@ if img_file_buffer is not None:
             mime="image/png"
           )
     
-    st.title(f"Es: {class_names[maxIndex]}")
+    st.title(f"Tu residuo fue clasificado como: {class_names[maxIndex]}")
 
     if maxIndex == 0:
         emoji = "📦"
